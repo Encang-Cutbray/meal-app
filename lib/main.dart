@@ -21,16 +21,17 @@ class MyApp extends StatelessWidget {
         canvasColor: Color.fromRGBO(225, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-            body1: TextStyle(
-              color: Color.fromRGBO(20, 51, 51, 1),
+              body1: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              body2: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              title: TextStyle(
+                  fontSize: 15,
+                  fontFamily: 'RobotoCondensed',
+                  fontWeight: FontWeight.bold),
             ),
-            body2: TextStyle(
-              color: Color.fromRGBO(20, 51, 51, 1),
-            ),
-            title: TextStyle(
-                fontSize: 15,
-                fontFamily: 'RobotoCondensed',
-                fontWeight: FontWeight.bold)),
       ),
 
       // home: CategoriesScreen(),
@@ -41,9 +42,9 @@ class MyApp extends StatelessWidget {
         RouteApps.MealDetails: (ctx) => MealDetailScreen(),
         RouteApps.Filters: (ctx) => FiltersScreen(),
       },
-      onUnknownRoute: (setting) {
-        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
-      },
+      onUnknownRoute: (setting) => MaterialPageRoute(
+        builder: (ctx) => CategoriesScreen(),
+      ),
     );
   }
 }
