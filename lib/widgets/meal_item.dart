@@ -11,7 +11,7 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final Function removeItem;
-  
+
   MealItem({
     @required this.id,
     @required this.title,
@@ -27,6 +27,7 @@ class MealItem extends StatelessWidget {
         .pushNamed(RouteApps.MealDetails, arguments: id)
         .then((result) {
       if (result != null) {
+        // catch data on poping
         removeItem(result);
       }
     });
